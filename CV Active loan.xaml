@@ -1,0 +1,645 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CV_Active_loan" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1781,590" sap2010:WorkflowViewState.IdRef="CV_Active_loan_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CV_Active_loan" sap:VirtualizedContainerService.HintSize="738,2945" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="Element_Exist" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:UiElementExists DisplayName="Element Exists 'H1'" Exists="[Element_Exist]" sap:VirtualizedContainerService.HintSize="676,139" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+      <ui:UiElementExists.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ce5fa4b2-b995-42e3-8387-087c045a68e8" InformativeScreenshot="ce00929bb2b6de93d5a3c87ecf09f62f" Selector="&lt;html app='chrome.exe' title='botsdna.com/ActiveLoans/' /&gt;&lt;webctrl tag='H1' /&gt;" TimeoutMS="3000">
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:UiElementExists.Target>
+    </ui:UiElementExists>
+    <If Condition="[Element_Exist]" sap:VirtualizedContainerService.HintSize="676,603" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="529,333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="467,248" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="https://botsdna.com/ActiveLoans/">
+            <ui:OpenBrowser.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </ui:OpenBrowser.Body>
+          </ui:OpenBrowser>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="c15cc133-91e7-4b29-b6d2-9746cc11408d" DisplayName="CV Screen Scope 'CENTER'" sap:VirtualizedContainerService.HintSize="676,2115" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+      <p:CVScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd2:DataTable" Name="Read_Excel" />
+              <Variable x:TypeArguments="sd2:DataTable" Name="CV_Extract_Dt" />
+            </Sequence.Variables>
+            <p:CvExtractDataTableWithDescriptor InRegion="{x:Null}" ScrollOffset="{x:Null}" AddHeaders="True" DelayScreenshotAfterScroll="250" Descriptor="[&quot;Target: Table (984,195,622,690)&quot;]" DesignTimeCacheId="c15cc133-91e7-4b29-b6d2-9746cc11408d" DesignTimeScaleFactor="1" DisplayName="CV Extract Table - Table" sap:VirtualizedContainerService.HintSize="642,222" sap2010:WorkflowViewState.IdRef="CvExtractDataTableWithDescriptor_2" IgnoreEmptyRows="False" InformativeScreenshot="4854d4eb99da326b3fc7c3d046e34402" MaxTableScrollHeightInPixels="30000" NumberOfScrolls="5" RefreshBefore="True" Result="[CV_Extract_Dt]" Scroll="True" ScrollDirection="Down" Version="V6">
+              <p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="e5a6ba7d-ff37-42a0-aa75-e6572ab7fd66">
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="984, 195, 622, 690" ElementType="Table" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
+            </p:CvExtractDataTableWithDescriptor>
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[Read_Excel]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="642,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Loans" WorkbookPath="input.xlsx" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[Read_Excel]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="642,1432" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd2:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd2:DataRow" Name="Row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="608,1245" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CV_Extract_Dt]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="546,1160" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd2:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd2:DataRow" Name="Row1" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,973" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If Condition="[Row(0).ToString.Substring(Row(0).ToString.Length-4)=Row1(1).ToString.Substring(Row1(1).ToString.Length-4)]" sap:VirtualizedContainerService.HintSize="450,780" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,510" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Text '*-7325' (1071,225,251,15)&quot;]" DesignTimeCacheId="c15cc133-91e7-4b29-b6d2-9746cc11408d" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="1def7f2237005e2a38ecec7214785405" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="Down" Version="V6">
+                                    <p:CvClickWithDescriptor.CursorPosition>
+                                      <ui:CursorPosition Position="Center">
+                                        <ui:CursorPosition.OffsetX>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetX>
+                                        <ui:CursorPosition.OffsetY>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetY>
+                                      </ui:CursorPosition>
+                                    </p:CvClickWithDescriptor.CursorPosition>
+                                    <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                      <uc:CvDescriptor Id="7f71e609-b924-40b6-80b8-bed830b8d8ae">
+                                        <uc:CvDescriptor.Target>
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1071, 225, 251, 15" ElementType="Text" Text="SAPTHAGIRI GRAMIN BANK-7325" />
+                                        </uc:CvDescriptor.Target>
+                                      </uc:CvDescriptor>
+                                    </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                    <p:CvClickWithDescriptor.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f9dd638b-fc1b-4896-a31f-46d654c1d52a">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </p:CvClickWithDescriptor.Target>
+                                  </p:CvClickWithDescriptor>
+                                  <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[New CvDescriptor() With {.Target = &quot;SAPTHAGIRI GRAMIN BANK-7325&quot;, .Description = &quot;SAPTHAGIRI GRAMIN BANK&quot;}]" DesignTimeCacheId="c15cc133-91e7-4b29-b6d2-9746cc11408d" DesignTimeScaleFactor="1" DisplayName="CV Click - Text" sap:VirtualizedContainerService.HintSize="354,208" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="1def7f2237005e2a38ecec7214785405" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+                                    <p:CvClickWithDescriptor.CursorPosition>
+                                      <ui:CursorPosition Position="Center">
+                                        <ui:CursorPosition.OffsetX>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetX>
+                                        <ui:CursorPosition.OffsetY>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:CursorPosition.OffsetY>
+                                      </ui:CursorPosition>
+                                    </p:CvClickWithDescriptor.CursorPosition>
+                                    <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                      <uc:CvDescriptor Id="e624258e-a487-413d-92ac-6d2fe912be22">
+                                        <uc:CvDescriptor.Target>
+                                          <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="1071, 225, 251, 15" ElementType="Text" Text="SAPTHAGIRI GRAMIN BANK-7325" />
+                                        </uc:CvDescriptor.Target>
+                                      </uc:CvDescriptor>
+                                    </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                                    <p:CvClickWithDescriptor.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="eaf1f850-4186-4c85-ae3f-42fab7b7f669">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </p:CvClickWithDescriptor.Target>
+                                  </p:CvClickWithDescriptor>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,100" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,108" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[Row(0).ToString.Substring(Row(0).ToString.Length-4)+&quot;  =  &quot;+Row1(1).ToString.Substring(Row1(1).ToString.Length-4)]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                    </ui:ForEachRow>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </p:CVScope.Body>
+      <p:CVScope.DesignTimeCacheContainer>
+        <uc:CvCacheContainer>
+          <uc:CvCacheContainer.Caches>
+            <scg:List x:TypeArguments="uc:CVCache" Capacity="1">
+              <uc:CVCache DataSent="False" DisplayName="Screen CV Extract Table - Tabl (Main)" Id="c15cc133-91e7-4b29-b6d2-9746cc11408d" InformativeScreenshot="d7208861ffd903edcf31cb92c6419001" LogicalPosition="8, -8" OcrText="bots NNIA UIV/I TECHNOLOGY Active Loans Requirement input xlsx Solution End2End(Source Code) STATUS LOAN CODE PAN NUMBER ACTIVE SAPTHAGIRI GRAMIN BANK-7325 DIWPK9815G ACTIVE ICICIBANK-6673 QISTV8492U ACTIVE CENTRAL BANK OF BANK-5652 GTDFR6483T ACTIVE UNION BANK OF INDIA-7541 GHAST6432K ACTIVE INDIAN BANK-5174 DIWGH9765T ACTIVE ICICIBANK-3687 HDGTS5427K ACTIVE IDBI-3832 CIWTS8549K ACTIVE ICICIBANK-1514 SGTEI7453B ACTIVE AXIS BANK-6943 CTRBD5738Y ACTIVE CANARA BANK-5132 DIWGK3721P ACTIVE SBI-3243 SIKDA9523L ACTIVE KOTAK BANK-4553 LDSCT4628C INACTIVE LAXMI NIVAS BANK-4392 JSFGT8291K ACTIVE HDFC-1545 SAYDG7351J ACTIVE SBI-3431 AKLTB3921L ACTIVE AXIS BANK-2854 KLERT7451H ACTIVE HDFC-8261 LOATY7258D ACTIVE CANARA BANK-6294 QISTW9054F ON HOLD PUNJAB GRAMIN BANK-5376 RESCT8421B INACTIVE KOTAK BANK-9353 FSTEY7638P ACTIVE ANDRABANK-7653 LPEST9640K ACTIVE TELANGANA GRAMIN BANK-9524 YDREI6382H ACTIVE KOTAK BANK-5114 GTPUE3856E ON HOLD AXIS BANK-8723 LPSTA7251A INACTIVE ANDRABANK-3762 RFSBZ5194S ACTIVE CANARA BANK-2647 YWQAV4172C ACTIVE SYDICATE BANK-4853 LAZTU2819D ACTIVE APGVR-1415 ISWUITL6217T" Position="8, -8" ScreenshotGuid="cc41bca6-3850-4dc6-b96b-62df16310e08" ServerVersion="1">
+                <uc:CVCache.CvAnchorRelations>
+                  <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="4">
+                    <uc:AnchorRelationInfo IsTargetText="True" Target="1">
+                      <uc:AnchorRelationInfo.Anchors>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>0</x:Int32>
+                        </x:Array>
+                      </uc:AnchorRelationInfo.Anchors>
+                    </uc:AnchorRelationInfo>
+                  </scg:List>
+                </uc:CVCache.CvAnchorRelations>
+                <uc:CVCache.CvTables>
+                  <x:Array Type="uc:CvTableInfo">
+                    <uc:CvTableInfo>
+                      <uc:CvTableInfo.Columns>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>984</x:Int32>
+                          <x:Int32>1066</x:Int32>
+                          <x:Int32>1428</x:Int32>
+                          <x:Int32>1539</x:Int32>
+                          <x:Int32>1606</x:Int32>
+                        </x:Array>
+                      </uc:CvTableInfo.Columns>
+                      <uc:CvTableInfo.Rows>
+                        <x:Array Type="x:Int32">
+                          <x:Int32>195</x:Int32>
+                          <x:Int32>219</x:Int32>
+                          <x:Int32>243</x:Int32>
+                          <x:Int32>267</x:Int32>
+                          <x:Int32>291</x:Int32>
+                          <x:Int32>315</x:Int32>
+                          <x:Int32>339</x:Int32>
+                          <x:Int32>363</x:Int32>
+                          <x:Int32>387</x:Int32>
+                          <x:Int32>411</x:Int32>
+                          <x:Int32>435</x:Int32>
+                          <x:Int32>459</x:Int32>
+                          <x:Int32>483</x:Int32>
+                          <x:Int32>507</x:Int32>
+                          <x:Int32>530</x:Int32>
+                          <x:Int32>554</x:Int32>
+                          <x:Int32>578</x:Int32>
+                          <x:Int32>603</x:Int32>
+                          <x:Int32>626</x:Int32>
+                          <x:Int32>651</x:Int32>
+                          <x:Int32>674</x:Int32>
+                          <x:Int32>699</x:Int32>
+                          <x:Int32>723</x:Int32>
+                          <x:Int32>747</x:Int32>
+                          <x:Int32>771</x:Int32>
+                          <x:Int32>794</x:Int32>
+                          <x:Int32>818</x:Int32>
+                          <x:Int32>843</x:Int32>
+                          <x:Int32>867</x:Int32>
+                          <x:Int32>885</x:Int32>
+                        </x:Array>
+                      </uc:CvTableInfo.Rows>
+                    </uc:CvTableInfo>
+                  </x:Array>
+                </uc:CVCache.CvTables>
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="128">
+                    <uc:CvElementInfo Category="Cell" Region="1066, 843, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 818, 82, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 794, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 699, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 530, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 771, 82, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 507, 82, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 843, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 674, 82, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 626, 82, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 291, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 483, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 747, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 578, 82, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 603, 111, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 483, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 411, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 554, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 818, 362, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 603, 82, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 723, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 459, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 387, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 843, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 339, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 818, 111, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 651, 82, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 435, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 771, 111, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 554, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 435, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 530, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 674, 111, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 699, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 747, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 459, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 411, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 723, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 794, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 387, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 243, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 243, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 626, 111, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 339, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 267, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 578, 111, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 315, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 291, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 267, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 363, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 507, 111, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 315, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 651, 111, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 219, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 363, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 195, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 794, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 674, 362, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 867, 362, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 723, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 219, 111, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 195, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 651, 362, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 363, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 771, 362, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 867, 82, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 483, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 626, 362, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 699, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="984, 195, 82, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 578, 362, 25" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 267, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 554, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 435, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 291, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 459, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 243, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 219, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 530, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 603, 362, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 747, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 339, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1428, 867, 111, 18" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 411, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 315, 362, 24" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 507, 362, 23" />
+                    <uc:CvElementInfo Category="Cell" Region="1066, 387, 362, 24" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="1208, 0, 108, 70" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="1431, 198, 111, 22" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1301, 154, 172, 23" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1429, 726, 111, 25" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1151, 156, 82, 22" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1231, 155, 70, 22" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1054, 155, 101, 21" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1429, 750, 110, 25" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1430, 678, 111, 25" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1068, 197, 365, 24" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1059, 883, 388, 8" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="985, 197, 83, 25" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="987, 200, 15, 18" />
+                  </scg:List>
+                </uc:CVCache.CvUiElements>
+                <uc:CVCache.OcrTexts>
+                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="128">
+                    <uc:OcrTextInfo Region="1216, 1, 35, 15" Text="bots" />
+                    <uc:OcrTextInfo Region="1216, 16, 89, 20" Text="NNIA" />
+                    <uc:OcrTextInfo Region="1215, 37, 97, 16" Text="UIV/I" />
+                    <uc:OcrTextInfo Region="1214, 52, 97, 13" Text="TECHNOLOGY" />
+                    <uc:OcrTextInfo Region="1173, 94, 89, 25" Text="Active" />
+                    <uc:OcrTextInfo Region="1267, 93, 87, 26" Text="Loans" />
+                    <uc:OcrTextInfo Region="1056, 159, 91, 18" Text="Requirement" />
+                    <uc:OcrTextInfo Region="1156, 159, 37, 18" Text="input" />
+                    <uc:OcrTextInfo Region="1195, 158, 31, 15" Text="xlsx" />
+                    <uc:OcrTextInfo Region="1236, 158, 59, 15" Text="Solution" />
+                    <uc:OcrTextInfo Region="1305, 158, 119, 18" Text="End2End(Source" />
+                    <uc:OcrTextInfo Region="1426, 158, 44, 18" Text="Code)" />
+                    <uc:OcrTextInfo Region="989, 202, 58, 14" Text="STATUS" />
+                    <uc:OcrTextInfo Region="1202, 202, 47, 14" Text="LOAN" />
+                    <uc:OcrTextInfo Region="1251, 202, 45, 14" Text="CODE" />
+                    <uc:OcrTextInfo Region="1433, 202, 32, 14" Text="PAN" />
+                    <uc:OcrTextInfo Region="1467, 202, 70, 14" Text="NUMBER" />
+                    <uc:OcrTextInfo Region="988, 226, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1071, 225, 96, 15" Text="SAPTHAGIRI" />
+                    <uc:OcrTextInfo Region="1169, 226, 67, 14" Text="GRAMIN" />
+                    <uc:OcrTextInfo Region="1238, 225, 84, 15" Text="BANK-7325" />
+                    <uc:OcrTextInfo Region="1433, 226, 97, 14" Text="DIWPK9815G" />
+                    <uc:OcrTextInfo Region="988, 250, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 249, 125, 15" Text="ICICIBANK-6673" />
+                    <uc:OcrTextInfo Region="1433, 249, 92, 17" Text="QISTV8492U" />
+                    <uc:OcrTextInfo Region="988, 274, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1071, 274, 73, 14" Text="CENTRAL" />
+                    <uc:OcrTextInfo Region="1147, 273, 48, 15" Text="BANK" />
+                    <uc:OcrTextInfo Region="1197, 273, 22, 15" Text="OF" />
+                    <uc:OcrTextInfo Region="1221, 273, 84, 15" Text="BANK-5652" />
+                    <uc:OcrTextInfo Region="1433, 273, 96, 16" Text="GTDFR6483T" />
+                    <uc:OcrTextInfo Region="988, 298, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 298, 53, 14" Text="UNION" />
+                    <uc:OcrTextInfo Region="1126, 298, 47, 14" Text="BANK" />
+                    <uc:OcrTextInfo Region="1175, 298, 22, 14" Text="OF" />
+                    <uc:OcrTextInfo Region="1199, 298, 85, 14" Text="INDIA-7541" />
+                    <uc:OcrTextInfo Region="1433, 298, 99, 14" Text="GHAST6432K" />
+                    <uc:OcrTextInfo Region="988, 322, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 322, 59, 14" Text="INDIAN" />
+                    <uc:OcrTextInfo Region="1131, 321, 85, 15" Text="BANK-5174" />
+                    <uc:OcrTextInfo Region="1433, 322, 98, 14" Text="DIWGH9765T" />
+                    <uc:OcrTextInfo Region="988, 346, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 345, 126, 15" Text="ICICIBANK-3687" />
+                    <uc:OcrTextInfo Region="1433, 346, 99, 14" Text="HDGTS5427K" />
+                    <uc:OcrTextInfo Region="988, 370, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 370, 72, 14" Text="IDBI-3832" />
+                    <uc:OcrTextInfo Region="1433, 370, 95, 14" Text="CIWTS8549K" />
+                    <uc:OcrTextInfo Region="988, 394, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1069, 393, 128, 15" Text="ICICIBANK-1514" />
+                    <uc:OcrTextInfo Region="1433, 394, 89, 14" Text="SGTEI7453B" />
+                    <uc:OcrTextInfo Region="988, 418, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 418, 39, 14" Text="AXIS" />
+                    <uc:OcrTextInfo Region="1111, 417, 84, 15" Text="BANK-6943" />
+                    <uc:OcrTextInfo Region="1433, 418, 99, 15" Text="CTRBD5738Y" />
+                    <uc:OcrTextInfo Region="988, 442, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 442, 69, 14" Text="CANARA" />
+                    <uc:OcrTextInfo Region="1141, 441, 84, 15" Text="BANK-5132" />
+                    <uc:OcrTextInfo Region="1432, 441, 99, 15" Text="DIWGK3721P" />
+                    <uc:OcrTextInfo Region="988, 466, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 466, 64, 14" Text="SBI-3243" />
+                    <uc:OcrTextInfo Region="1433, 466, 92, 14" Text="SIKDA9523L" />
+                    <uc:OcrTextInfo Region="988, 490, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 490, 57, 14" Text="KOTAK" />
+                    <uc:OcrTextInfo Region="1128, 489, 85, 15" Text="BANK-4553" />
+                    <uc:OcrTextInfo Region="1433, 489, 95, 15" Text="LDSCT4628C" />
+                    <uc:OcrTextInfo Region="988, 514, 77, 14" Text="INACTIVE" />
+                    <uc:OcrTextInfo Region="1072, 513, 53, 15" Text="LAXMI" />
+                    <uc:OcrTextInfo Region="1126, 513, 49, 15" Text="NIVAS" />
+                    <uc:OcrTextInfo Region="1177, 513, 85, 15" Text="BANK-4392" />
+                    <uc:OcrTextInfo Region="1433, 513, 91, 15" Text="JSFGT8291K" />
+                    <uc:OcrTextInfo Region="988, 538, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 537, 82, 15" Text="HDFC-1545" />
+                    <uc:OcrTextInfo Region="1433, 537, 94, 15" Text="SAYDG7351J" />
+                    <uc:OcrTextInfo Region="988, 562, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 562, 64, 14" Text="SBI-3431" />
+                    <uc:OcrTextInfo Region="1433, 562, 95, 14" Text="AKLTB3921L" />
+                    <uc:OcrTextInfo Region="988, 586, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 586, 39, 14" Text="AXIS" />
+                    <uc:OcrTextInfo Region="1111, 585, 85, 15" Text="BANK-2854" />
+                    <uc:OcrTextInfo Region="1433, 586, 96, 14" Text="KLERT7451H" />
+                    <uc:OcrTextInfo Region="988, 610, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 610, 81, 14" Text="HDFC-8261" />
+                    <uc:OcrTextInfo Region="1433, 610, 97, 14" Text="LOATY7258D" />
+                    <uc:OcrTextInfo Region="988, 634, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 634, 69, 14" Text="CANARA" />
+                    <uc:OcrTextInfo Region="1140, 633, 85, 15" Text="BANK-6294" />
+                    <uc:OcrTextInfo Region="1433, 633, 93, 17" Text="QISTW9054F" />
+                    <uc:OcrTextInfo Region="988, 658, 26, 14" Text="ON" />
+                    <uc:OcrTextInfo Region="1015, 657, 47, 15" Text="HOLD" />
+                    <uc:OcrTextInfo Region="1070, 658, 62, 14" Text="PUNJAB" />
+                    <uc:OcrTextInfo Region="1135, 658, 66, 14" Text="GRAMIN" />
+                    <uc:OcrTextInfo Region="1203, 657, 86, 15" Text="BANK-5376" />
+                    <uc:OcrTextInfo Region="1433, 658, 94, 14" Text="RESCT8421B" />
+                    <uc:OcrTextInfo Region="988, 682, 77, 14" Text="INACTIVE" />
+                    <uc:OcrTextInfo Region="1071, 682, 56, 14" Text="KOTAK" />
+                    <uc:OcrTextInfo Region="1128, 682, 85, 14" Text="BANK-9353" />
+                    <uc:OcrTextInfo Region="1433, 682, 91, 14" Text="FSTEY7638P" />
+                    <uc:OcrTextInfo Region="988, 706, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 705, 144, 15" Text="ANDRABANK-7653" />
+                    <uc:OcrTextInfo Region="1433, 706, 92, 14" Text="LPEST9640K" />
+                    <uc:OcrTextInfo Region="988, 730, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 730, 100, 14" Text="TELANGANA" />
+                    <uc:OcrTextInfo Region="1172, 730, 67, 14" Text="GRAMIN" />
+                    <uc:OcrTextInfo Region="1240, 730, 85, 14" Text="BANK-9524" />
+                    <uc:OcrTextInfo Region="1433, 730, 94, 14" Text="YDREI6382H" />
+                    <uc:OcrTextInfo Region="988, 754, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 754, 57, 14" Text="KOTAK" />
+                    <uc:OcrTextInfo Region="1128, 753, 85, 15" Text="BANK-5114" />
+                    <uc:OcrTextInfo Region="1433, 754, 95, 14" Text="GTPUE3856E" />
+                    <uc:OcrTextInfo Region="989, 778, 24, 14" Text="ON" />
+                    <uc:OcrTextInfo Region="1015, 778, 47, 14" Text="HOLD" />
+                    <uc:OcrTextInfo Region="1070, 778, 39, 14" Text="AXIS" />
+                    <uc:OcrTextInfo Region="1111, 777, 84, 15" Text="BANK-8723" />
+                    <uc:OcrTextInfo Region="1433, 778, 93, 14" Text="LPSTA7251A" />
+                    <uc:OcrTextInfo Region="988, 802, 77, 14" Text="INACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 801, 145, 15" Text="ANDRABANK-3762" />
+                    <uc:OcrTextInfo Region="1433, 802, 91, 14" Text="RFSBZ5194S" />
+                    <uc:OcrTextInfo Region="988, 826, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 826, 69, 14" Text="CANARA" />
+                    <uc:OcrTextInfo Region="1141, 825, 84, 15" Text="BANK-2647" />
+                    <uc:OcrTextInfo Region="1433, 825, 103, 17" Text="YWQAV4172C" />
+                    <uc:OcrTextInfo Region="988, 850, 61, 14" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1071, 850, 78, 14" Text="SYDICATE" />
+                    <uc:OcrTextInfo Region="1151, 849, 85, 15" Text="BANK-4853" />
+                    <uc:OcrTextInfo Region="1433, 849, 97, 15" Text="LAZTU2819D" />
+                    <uc:OcrTextInfo Region="988, 873, 61, 13" Text="ACTIVE" />
+                    <uc:OcrTextInfo Region="1070, 873, 93, 13" Text="APGVR-1415" />
+                    <uc:OcrTextInfo Region="1431, 873, 99, 13" Text="ISWUITL6217T" />
+                  </scg:List>
+                </uc:CVCache.OcrTexts>
+              </uc:CVCache>
+            </scg:List>
+          </uc:CvCacheContainer.Caches>
+        </uc:CvCacheContainer>
+      </p:CVScope.DesignTimeCacheContainer>
+      <p:CVScope.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+        </ActivityFunc>
+      </p:CVScope.OCREngine>
+      <p:CVScope.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a018a3d7-4aae-4b00-9c31-7a32e61e5216" InformativeScreenshot="212464d6c0dba62ee6efaf7e8c97e2e8" Selector="&lt;html app='chrome.exe' title='botsdna.com/ActiveLoans/' /&gt;&lt;webctrl tag='CENTER' /&gt;" WaitForReady="INTERACTIVE">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+        </ui:Target>
+      </p:CVScope.Target>
+      <p:CVScope.UseLocalServer>
+        <InArgument x:TypeArguments="x:Boolean" />
+      </p:CVScope.UseLocalServer>
+    </p:CVScope>
+  </Sequence>
+</Activity>
